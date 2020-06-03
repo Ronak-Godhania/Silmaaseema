@@ -160,27 +160,6 @@ function updateAvailability(response, $productContainer) {
 }
 
 /**
- * Generates html for promotions section
- *
- * @param {array} promotions - list of promotions
- * @return {string} - Compiled HTML
- */
-function getPromotionsHtml(promotions) {
-    if (!promotions) {
-        return '';
-    }
-
-    var html = '';
-
-    promotions.forEach(function (promotion) {
-        html += '<div class="callout" title="' + promotion.details + '">' + promotion.calloutMsg +
-            '</div>';
-    });
-
-    return html;
-}
-
-/**
  * Generates html for product attributes section
  *
  * @param {array} attributes - list of attributes
@@ -224,18 +203,12 @@ function getAttributesHtml(attributes) {
 /**
  * Updates DOM using post-option selection Ajax response
  *
- * @param {OptionSelectionResponse} options - Ajax response options from selecting a product option
+ * @param {OptionSelectionResponse} optionsHtml - Ajax response optionsHtml from selecting a product option
  * @param {jQuery} $productContainer - DOM element for current product
  */
-function updateOptions(options, $productContainer) {
-    options.forEach(function (option) {
-        var $optionEl = $productContainer.find('.product-option[data-option-id*="' + option.id
-            + '"]');
-        option.values.forEach(function (value) {
-            var valueEl = $optionEl.find('option[data-value-id*="' + value.id + '"]');
-            valueEl.val(value.url);
-        });
-    });
+function updateOptions(optionsHtml, $productContainer) {
+	// Update options
+    $productContainer.find('.product-options').empty().html(optionsHtml);
 }
 
 /**
@@ -302,7 +275,7 @@ function handleVariantResponse(response, $productContainer) {
     }
 
     // Update promotions
-    $('.promotions').empty().html(getPromotionsHtml(response.product.promotions));
+    $productContainer.find('.promotions').empty().html(response.product.promotionsHtml);
 
     updateAvailability(response, $productContainer);
 
@@ -364,7 +337,7 @@ function attributeSelect(selectedValueUrl, $productContainer) {
             method: 'GET',
             success: function (data) {
                 handleVariantResponse(data, $productContainer);
-                updateOptions(data.product.options, $productContainer);
+                updateOptions(data.product.optionsHtml, $productContainer);
                 updateQuantities(data.product.quantities, $productContainer);
                 $('body').trigger('product:afterAttributeSelect',
                     { data: data, container: $productContainer });
@@ -539,6 +512,26 @@ function getOptions($productContainer) {
     return JSON.stringify(options);
 }
 
+/**
+ * Makes a call to the server to report the event of adding an item to the cart
+ *
+ * @param {string | boolean} url - a string representing the end point to hit so that the event can be recorded, or false
+ */
+function miniCartReportingUrl(url) {
+    if (url) {
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function () {
+                // reporting urls hit on the server
+            },
+            error: function () {
+                // no reporting urls hit on the server
+            }
+        });
+    }
+}
+
 module.exports = {
     attributeSelect: attributeSelect,
     methods: {
@@ -670,6 +663,7 @@ module.exports = {
                         handlePostCartAdd(data);
                         $('body').trigger('product:afterAddToCart', data);
                         $.spinner().stop();
+                        miniCartReportingUrl(data.reportingURL);
                     },
                     error: function () {
                         $.spinner().stop();
@@ -683,14 +677,14 @@ module.exports = {
             var $choiceOfBonusProduct = $(this).parents('.choice-of-bonus-product');
             var pid = $(this).data('pid');
             var maxPids = $('.choose-bonus-product-dialog').data('total-qty');
-            var submittedQty = parseInt($(this).parents('.choice-of-bonus-product').find('.bonus-quantity-select').val(), 10);
+            var submittedQty = parseInt($choiceOfBonusProduct.find('.bonus-quantity-select').val(), 10);
             var totalQty = 0;
             $.each($('#chooseBonusProductModal .selected-bonus-products .selected-pid'), function () {
                 totalQty += $(this).data('qty');
             });
             totalQty += submittedQty;
-            var optionID = $(this).parents('.choice-of-bonus-product').find('.product-option').data('option-id');
-            var valueId = $(this).parents('.choice-of-bonus-product').find('.options-select option:selected').data('valueId');
+            var optionID = $choiceOfBonusProduct.find('.product-option').data('option-id');
+            var valueId = $choiceOfBonusProduct.find('.options-select option:selected').data('valueId');
             if (totalQty <= maxPids) {
                 var selectedBonusProductHtml = ''
                 + '<div class="selected-pid row" '
@@ -733,7 +727,7 @@ module.exports = {
             $('button.select-bonus-product', response.$productContainer).attr('disabled',
                 (!response.product.readyToOrder || !response.product.available));
             var pid = response.product.id;
-            $('button.select-bonus-product').data('pid', pid);
+            $('button.select-bonus-product', response.$productContainer).data('pid', pid);
         });
     },
     showMoreBonusProducts: function () {
@@ -795,17 +789,25 @@ module.exports = {
                 success: function (data) {
                     $.spinner().stop();
                     if (data.error) {
-                        $('.error-choice-of-bonus-products')
-                            .html(data.errorMessage);
+                        $('#chooseBonusProductModal').modal('hide');
+                        if ($('.add-to-cart-messages').length === 0) {
+                            $('body').append('<div class="add-to-cart-messages"></div>');
+                        }
+                        $('.add-to-cart-messages').append(
+                            '<div class="alert alert-danger add-to-basket-alert text-center"'
+                            + ' role="alert">'
+                            + data.errorMessage + '</div>'
+                        );
+                        setTimeout(function () {
+                            $('.add-to-basket-alert').remove();
+                        }, 3000);
                     } else {
                         $('.configure-bonus-product-attributes').html(data);
                         $('.bonus-products-step2').removeClass('hidden-xl-down');
                         $('#chooseBonusProductModal').modal('hide');
 
                         if ($('.add-to-cart-messages').length === 0) {
-                            $('body').append(
-                                '<div class="add-to-cart-messages"></div>'
-                            );
+                            $('body').append('<div class="add-to-cart-messages"></div>');
                         }
                         $('.minicart-quantity').html(data.totalQty);
                         $('.add-to-cart-messages').append(
@@ -818,7 +820,7 @@ module.exports = {
                             if ($('.cart-page').length) {
                                 location.reload();
                             }
-                        }, 3000);
+                        }, 1500);
                     }
                 },
                 error: function () {
@@ -829,5 +831,6 @@ module.exports = {
     },
 
     getPidValue: getPidValue,
-    getQuantitySelected: getQuantitySelected
+    getQuantitySelected: getQuantitySelected,
+    miniCartReportingUrl: miniCartReportingUrl
 };
