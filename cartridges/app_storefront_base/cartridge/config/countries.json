@@ -16,4 +16,7 @@
 }, {
     "id": "it_IT",
     "currencyCode": "EUR"
+}, {
+    "id": "fi_FI",
+    "currencyCode": "EUR"
 }]
