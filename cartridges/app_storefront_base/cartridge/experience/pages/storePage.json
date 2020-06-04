@@ -1,11 +1,10 @@
-{
     "name":"Storefront Page",
     "description":"A Storefront Page Type",
     "region_definitions":[
       {
         "id":"headerbanner",
         "name":"Header Banner Region",
-        "max_components": 2,
+        "max_components": 1,
         "component_type_exclusions": [
           { "type_id": "commerce_assets.categorytile" },
           { "type_id": "commerce_assets.category" },
