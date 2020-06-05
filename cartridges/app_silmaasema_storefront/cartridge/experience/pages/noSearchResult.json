@@ -1,0 +1,85 @@
+{
+    "name":"No Search result Layout",
+    "description":"Pre-defined set of regions to place your images and text to create the No search result layout",
+    "region_definitions":[
+      {
+        "id":"region1",
+        "name":"Region 1",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+
+        ]
+      },
+      {
+        "id":"region2",
+        "name":"Region 2",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"region3",
+        "name":"Region 3",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"region4",
+        "name":"Region 4",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"region5",
+        "name":"Region 5",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"region6",
+        "name":"Region 6",
+        "max_components":1,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      }
+    ]
+}
