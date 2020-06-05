@@ -3,7 +3,7 @@
     <div class="hero slant-down error-hero">
         <h1 class="page-title">${Resource.msg('heading.error.general', 'error', null)}</h1>
     </div>
-hi this is a test change
+
     <div class="container">
         <h2 class='text-center error-message'>${Resource.msg('message.page.not.found', 'error', null)}</h2>
         <div class="row">
