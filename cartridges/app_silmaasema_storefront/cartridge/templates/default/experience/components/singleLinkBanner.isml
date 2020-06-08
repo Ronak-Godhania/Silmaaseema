@@ -1,0 +1,8 @@
+<!--- TEMPLATENAME: singleLinkBanner.isml --->
+<isprint value="${pdict.richText}" encoding="off"/>
+<a href="${pdict.categoryLink}">
+<p class="col-12 text-sm-right ">${Resource.msg('pd.link.banner.view.all','pageDesigner',null)}</p></a>
+
+
+
+
