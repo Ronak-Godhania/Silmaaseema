@@ -1,0 +1,132 @@
+footer {
+    padding-top: 0.10em;
+    background-color: #393939;
+}
+
+.subscribe {
+    text-align: center;
+}
+
+.Subscribe-to-our {
+    height: 27px;
+    font-family: OpenSans;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+.Newsletter {
+    height: 41px;
+    font-family: OpenSans;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.updated-text {
+    height: 25px;
+    font-family: OpenSans;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-top: 28px;
+    padding-bottom: 35px;
+}
+
+.Enter-the-email-address[placeholder] {
+    font-family: OpenSans;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #393939;
+    padding-left: 31px;
+}
+
+.Enter-the-email-address {
+    width: 500px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.button-join {
+    font-family: OpenSans;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #9b5ba5;
+}
+
+.silmcontent {
+    margin-top: 2px;
+    align-content: center;
+}
+
+.contentheading {
+    width: 97px;
+    height: 25px;
+    font-family: OpenSans;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.footer-item ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.footer-item ul li a {
+    width: 87px;
+    height: 22px;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.connect {
+    height: 22px;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
