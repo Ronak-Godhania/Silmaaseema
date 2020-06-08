@@ -1,7 +1,7 @@
 <!--- TEMPLATENAME: singleLinkBanner.isml --->
 <isprint value="${pdict.richText}" encoding="off"/>
-<a href="${pdict.categoryLink}">
-<p class="col-12 text-sm-right ">${Resource.msg('pd.link.banner.view.all','pageDesigner',null)}</p></a>
+<a style="text-align:right;" href="${pdict.categoryLink}">
+<p>${Resource.msg('pd.link.banner.view.all','pageDesigner',null)}</p></a>
 
 
 
