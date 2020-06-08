@@ -1,7 +1,0 @@
-<!--- TEMPLATENAME: singleLinkBanner.isml --->
-
-<a href="${pdict.categoryLink}">                   
-    <div class="col-12 text-sm-right text-center">
-        <p >${Resource.msg('pd.link.banner.view.all','pageDesigner',null)}</p>
-    </div>
- </a>
