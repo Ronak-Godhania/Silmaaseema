@@ -1,0 +1,158 @@
+.silmaasemaBrand {
+  width: 1150px;
+  height: 50px;
+  background-color: #ffffff;
+}
+
+.silmaasemaHeader {
+  width: 1150px;
+  height: 64px;
+  background-color: #ffffff;
+}
+
+.LOGIN {
+  width: 57px;
+  height: 25px;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.LoginUser {
+    border-radius: 100px;
+    border: solid 1.6px #9b5ba5;
+    background-color: #9b5ba5;
+    height: 32px;
+    width: 54px;
+    margin-top: 18px;
+    right: 16px
+}
+
+.header-search {
+    width: 568px;
+    height: 48px;
+    border-radius: 40px;
+    background-color: #cccccc;
+"
+}
+
+.Store-Locator {
+  width: 113px;
+  height: 25px;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #222222;
+  margin-right: 10px;
+}
+
+.Make-An-Appointment {
+  width: 193px;
+  height: 25px;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #222222;
+  margin-right: 10px;
+}
+.Customer-Service {
+  width: 147px;
+  height: 25px;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #222222;
+  margin-right: 10px;
+}
+
+.Accessories-Care-Products {
+  width: 239px;
+  height: 25px;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #222222;
+}
+
+.silmaasemaminicart-icon {
+  width: 14px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.favicon-header {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.silmaasemaBrandPadding{
+	height: 90px;
+    width: 1167px;
+}
+
+.storelocator-header{
+	margin-top: 20px;
+}
+
+.site-search .fa-close, .site-search .fa-searchIcon {
+	right: -15.1em;
+}
+
+.site-search .fa-close, .site-search .fa-searchIcon, .site-search .resetIcon-button
+	{
+	position: absolute;
+	border: none;
+	top: .5625em;
+	padding: 0;
+	background-color: transparent
+}
+
+
+.fa-searchIcon:before {
+	content: "\F002"
+}
+
+.fa-searchIcon-plus:before {
+	content: "\F00E"
+}
+
+.fa-searchIcon-minus:before {
+	content: "\F010"
+}
+
+.mobile-header-icons{
+	margin-right: 450px;
+}
+
+.mobile-Login {
+  width: 13px;
+  height: 16px;
+  object-fit: contain;
+}
+.mobile-favicon{
+  width: 17px;
+  object-fit: contain;
+  height: 76px;	
+}

@@ -1,0 +1,103 @@
+<header>
+	<isinclude template="/components/header/skipNav" />
+
+	<div class="header-banner slide-up d-none">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div></div>
+                <div class="content">
+                    <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+                </div>
+                <div class="close-button">
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<nav role="navigation">
+		<div class="header container">
+			<div class=" row silmaasemaBrandPadding">
+				<div class="col-12">
+
+					<div class="navbar-header silmaasemaBrand">
+						<div class="pull-left">
+							<div class="">
+							<button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                &#9776; <span class="hidden-xs-down"></span>
+                            </button>
+								<a class="logo-home" href="${URLUtils.url('Home-Show')}"
+									title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+									<img class="hidden-md-down" src="${URLUtils.staticURL('/images/silmaasema-logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}"
+									width="150" height="150" />
+									<img class="d-lg-none" src="${URLUtils.staticURL('/images/silmaasema-logo.svg')}" 	alt="${Resource.msg('global.storename', 'common', null)}" width="150" height="150" />	
+									</a>
+								</a>
+							</div>
+						</div>
+						<div class="pull-right  storelocator-header">
+							<div class="search hidden-xs-down">
+								<isinclude template="home/headerLinks" />
+							</div>
+							<div class="mobile-header-icons">
+							<img src="${URLUtils.staticURL('/images/favicons/favicon 1.png')}" srcset="img/favicon 1@2x.png 2x,img/favicon 1@3x.png 3x"
+									class="mobile-favicon">
+								<div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+									<isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="navbar-header silmaasemaHeader">
+						<div class="pull-left">
+							<button class="navbar-toggler hidden-md-down" type="button"
+								aria-controls="sg-navbar-collapse" aria-expanded="false"
+								aria-label="Toggle navigation">
+								&#9776; <span class="hidden-xs-down">${Resource.msg('label.header.navbar',
+									'common', null)}</span>
+							</button>
+
+							<div class="search hidden-xs-down">
+								<isinclude template="components/header/search" />
+							</div>
+						</div>
+
+						<div class="pull-right">
+							<div class="hidden-md-down">
+
+								<img
+									src="${URLUtils.staticURL('/images/favicons/favicon 1.png')}"
+									srcset="img/favicon 1@2x.png 2x,img/favicon 1@3x.png 3x"
+									class="favicon-header">
+								<div class="minicart"
+									data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+									<isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+
+								</div>
+								<isinclude url="${URLUtils.url('Account-Header')}" />
+								<isinclude url="${URLUtils.url('Page-Locale')}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-none" id="sg-navbar-collapse">
+            <div class="container">
+                <div class="row">
+                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+                </div>
+            </div>
+        </div>
+		<div class="search-mobile d-sm-none">
+			<isinclude template="components/header/search" />
+		</div>
+	</nav>
+</header>
