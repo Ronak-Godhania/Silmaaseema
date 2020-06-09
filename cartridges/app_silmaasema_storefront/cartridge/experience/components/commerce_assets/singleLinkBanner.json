@@ -1,0 +1,28 @@
+{
+    "name": "Single link banner",
+    "description": "Single link banner",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+	      "id": "viewAll",
+	      "name": "View all Link",
+	      "description": "View single link on the banner image",
+	      "attribute_definitions": [
+		     {
+	          "id": "richText",
+	          "name": "content",
+	          "description": "This is the rich text content area",
+	          "type": "markup",
+	          "required": true
+	        },
+	        {
+	          "id": "categoryLink",
+	          "name": "Category Link",
+	          "type": "category",
+	          "required": true
+	        }
+	      ]
+    }
+    ],
+    "region_definitions": []
+}
